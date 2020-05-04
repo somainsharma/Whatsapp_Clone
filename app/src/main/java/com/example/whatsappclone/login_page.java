@@ -65,9 +65,10 @@ public class login_page extends AppCompatActivity implements View.OnClickListene
                         if(user != null && e == null){
                             Toast.makeText(login_page.this, user.getUsername()
                                     + " has successfully logged in ", Toast.LENGTH_LONG).show();
-                            // transitionofActivity();
+
                             Intent intent = new Intent(login_page.this,PrimaryActivity.class);
                             startActivity(intent);
+                            finish();
 
                         }
                         else{

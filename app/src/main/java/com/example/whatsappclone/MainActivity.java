@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnsignup.setOnClickListener(MainActivity.this);
         btntowardsloginpage.setOnClickListener(MainActivity.this);
+
+        if(ParseUser.getCurrentUser() != null){
+            Intent intent = new Intent(this,PrimaryActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
 
     }
